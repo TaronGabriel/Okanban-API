@@ -7,7 +7,8 @@ const listController = {
     getAll: async (req, res) => {
         // récupérer les données => models
         const allLists = await List.findAll({
-            order: [['position', 'ASC']]
+            include: 'cards',
+            order: [['position', 'DESC']]
         });
         // renvoyer les données au format JSON
         res.json(allLists);

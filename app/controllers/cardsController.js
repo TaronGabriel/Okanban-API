@@ -35,13 +35,16 @@ const cardsController = {
         const description = req.body.description;
         const listId = Number(req.body.listId);
 
+        console.log("description="+description)
+        console.log("listId="+listId)
+
         if (typeof description != 'string' || description.length < 2 || isNaN(listId)) {
             errors.error400(res);
         }
 
         try {
             const card = await Card.create({ description, listId });
-            res.json(card);
+            //res.json(card);
         } catch(err) {
             errors.error500(res, err);
         }
