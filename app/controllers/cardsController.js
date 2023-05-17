@@ -44,7 +44,7 @@ const cardsController = {
 
         try {
             const card = await Card.create({ description, listId });
-            //res.json(card);
+            res.json(card);
         } catch(err) {
             errors.error500(res, err);
         }

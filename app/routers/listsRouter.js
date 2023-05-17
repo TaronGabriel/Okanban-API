@@ -2,7 +2,6 @@
 const { Router } = require('express');
 const listsRouter = Router();
 const listsController = require('../controllers/listsController');
-const cardsController = require('../controllers/cardsController');
 const { body } = require('express-validator');
 // ce fichier a été use() par l'app express avec un préfixe "/lists", donc pour gérer l'url "/lists/:id" par exemple, il ne faudra préciser que "/:id".
 

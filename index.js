@@ -4,9 +4,12 @@ const express = require('express');
 const PORT = process.env.PORT || 1337;
 const cors = require('cors');
 const app = express();
-
+const multer = require('multer');
+const bodyParser = multer();
 // il faut que notre API 
 
+// on utlise .none() pour dire qu'on attends pas de fichier, uniquement des inputs "classiques" !
+app.use( bodyParser.none() );
 // on précise à notre app qu'on va recevoir du JSON
 app.use(express.json());
 
